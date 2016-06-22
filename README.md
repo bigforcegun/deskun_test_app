@@ -27,3 +27,6 @@ routes\backend.js
 
 http://localhost:4000/admin
 
+
+login: admin
+password: password
