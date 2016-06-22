@@ -1,0 +1,19 @@
+<div class="media">
+    <div class="media-left">
+        <a href="/uploads/images/<%= image.filename %>" target="_blank">
+            <img class="media-object" width="100" src="/uploads/images/<%= image.filename %>" alt="">
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">#<%= image.id %></h4>
+        <p>
+            Комментарий: <%= image.comment %>
+        </p>
+        <p>
+            ip: <%= image.client_ip %>
+        </p>
+        <p>
+            User Agent: <%= image.client_user_agent %>
+        </p>
+    </div>
+</div>

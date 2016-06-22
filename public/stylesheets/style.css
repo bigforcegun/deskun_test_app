@@ -1,0 +1,17 @@
+body {
+  padding-top: 50px; }
+
+.upload-block {
+  padding: 40px 15px; }
+  .upload-block .comment-input {
+    width: 100%;
+    height: 150px; }
+  .upload-block .fileinput .thumbnail {
+    margin-top: 5px; }
+  .upload-block .col-comment {
+    text-align: left; }
+    .upload-block .col-comment label {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+  .upload-block .col-picture {
+    text-align: center; }

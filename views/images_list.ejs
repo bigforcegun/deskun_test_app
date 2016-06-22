@@ -1,0 +1,13 @@
+<% layout('layout') %>
+<h1>
+    <%= title %>
+</h1>
+<div class="alert alert-warning" id="connection-warning" style="display: none">
+    Соединение потеряно.
+</div>
+<ul id="images-list">
+</ul>
+
+<% block('scripts', '<script type="text/javascript" src="/javascripts/ejs_production.js"></script>') %>
+<% block('scripts', '<script type="text/javascript" src="/javascripts/underscore-min.js"></script>') %>
+<% block('scripts', '<script type="text/javascript" src="/javascripts/admin-simple-app.js"></script>') %>
