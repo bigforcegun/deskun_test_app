@@ -30,13 +30,32 @@ router.get('/', loggedIn, function (req, res) {
 router.get('/login', notLoggedIn, function (req, res) {
     res.render('login', {
             title: 'Авторизация',
-            user: req.user
+            user: req.user,
+            success: req.query.success
         }
     );
 });
 
-router.post('/login', notLoggedIn, passport.authenticate('local'), function (req, res) {
+//@deprecated
+router.post('/login_old', notLoggedIn, passport.authenticate('local'), function (req, res) {
     res.redirect('/admin');
+});
+
+router.post('/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user) {
+        if (err) {
+            return next(err);
+        }
+        if (! user) {
+            res.redirect('/admin/login?success=false');
+        }
+        req.login(user, function(err){
+            if(err){
+                return next(err);
+            }
+            return res.redirect('/admin');
+        });
+    })(req, res, next);
 });
 
 router.get('/logout', loggedIn, function (req, res) {
